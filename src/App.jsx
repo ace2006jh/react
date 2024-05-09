@@ -1,36 +1,30 @@
 function App() {
-  // {} 사용해서 javascript 코드 작성 가능
+  // &&, ||
 
-  const v1 = 5;
-  const v2 = 7;
+  // falsy(false 같은)
+  //  : false, 0, "", null, undefined
 
-  function someAction() {
-    return "흥민";
+  const a = "undefined";
+
+  if (a) {
+    console.log("a는 참이다");
+  } else {
+    console.log("a는 거짓이다");
   }
 
-  function someAction2(p) {
-    return p * p;
-  }
-  return (
-    <>
-      <p>
-        {2} + {3} = {2 + 3}
-      </p>
-      <p>
-        {v1} + {v2} = {v1 + v2}
-      </p>
-      <p>
-        {v1} - {v2} = {v1 - v2}
-      </p>
-      <p>
-        {v1} X {v2} = {v1 * v2}
-      </p>
-      <p>{someAction()}</p>
-      <p>{someAction2(4)}</p>
-      <p>{v1 < 10 ? "작다" : "크다"}</p>
-      <p>{v1 > 3 ? "크다" : "작다"}</p>
-    </>
-  );
+  // truthy(true 같은) : falsy 가 아니면 truthy
+
+  // &&, || 와 조합
+
+  let b = 0;
+
+  let c = b && "값이 있음";
+  console.log("c", c); // 0
+
+  let d = b || "값이 없음";
+  console.log("d", d); // "값이 없음"
+
+  return <div></div>;
 }
 
 export default App;
