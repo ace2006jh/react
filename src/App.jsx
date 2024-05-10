@@ -27,6 +27,8 @@ function App(props) {
   };
   // 작성!
 
+  const { price, ...d } = c;
+
   console.log("price", price); // 500
   console.log("d.city", d.city); // "seoul"
   console.log("d.country", d.country); // "US"
