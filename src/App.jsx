@@ -1,14 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
-function MyComp({ name, age, children }) {
-  console.log("name", name);
-  console.log("age", age);
-  console.log("children", children);
+function MyCounter() {
+  const [count, setCount] = useState(0);
+
   return (
     <div>
-      <div>name : {name}</div>
-      <div>age : {age}</div>
-      <div>children : {children}</div>
+      {count}
+      <button onClick={() => setCount(count + 1)}>증가</button>
     </div>
   );
 }
@@ -16,10 +14,7 @@ function MyComp({ name, age, children }) {
 function App(props) {
   return (
     <div>
-      <MyComp name={"son"} age={33}>
-        {/* content는 children prop */}
-        <p>Lorem ipsum dolor.</p>
-      </MyComp>
+      <MyCounter />
     </div>
   );
 }
