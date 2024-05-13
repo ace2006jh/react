@@ -1,23 +1,18 @@
 import React, { useState } from "react";
 
-function MyNumber() {
-  const [number, setNumber] = useState(1000);
-  return (
-    <div>
-      <div>{number}</div>
-
-      <div>
-        <button onClick={() => setNumber(number - 1)}></button>
-        <button onClick={() => setNumber(number + 1)}></button>
-      </div>
-    </div>
-  );
-}
+const foods = ["pizza", "ramem", "coffee", "latte", "burger"];
 
 function App(props) {
+  const [index, setIndex] = useState(0);
+  const food = foods[index];
+
   return (
     <div>
-      <MyNumber />
+      {index > 0 && <button onClick={() => setIndex(index - 1)}>이전</button>}
+      {index < food.length - 1 && (
+        <button onClick={() => setIndex(index + 1)}>다음</button>
+      )}
+      <div>{food}</div>
     </div>
   );
 }
